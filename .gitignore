@@ -1,0 +1,18 @@
+# Python virtual environment
+Enterprise-Copilot/
+
+# Environment variables
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Local database
+*.db
+
+# Uploaded files
+data/uploads/
+
+# IDE
+.vscode/

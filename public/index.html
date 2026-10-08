@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResolveAI | Enterprise Support Copilot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-mark">R</div>
+                <div>
+                    <h1>ResolveAI</h1>
+                    <span>Enterprise Copilot</span>
+                </div>
+            </div>
+
+            <div class="sidebar-label">Workspace</div>
+
+            <nav class="sidebar-nav">
+                <button class="nav-item active" data-view="assistant" type="button">
+                    <span class="nav-icon">✦</span>
+                    <span>Assistant</span>
+                </button>
+
+                <button class="nav-item" data-view="overview" type="button">
+                    <span class="nav-icon">◫</span>
+                    <span>Overview</span>
+                </button>
+
+                <button class="nav-item" data-view="tickets" type="button">
+                    <span class="nav-icon">□</span>
+                    <span>Tickets</span>
+                </button>
+
+                <button class="nav-item" data-view="knowledge" type="button">
+                    <span class="nav-icon">▤</span>
+                    <span>Knowledge</span>
+                </button>
+
+                <button class="nav-item" data-view="analytics" type="button">
+                    <span class="nav-icon">◒</span>
+                    <span>Analytics</span>
+                </button>
+
+                <div class="sidebar-label management-label">Management</div>
+
+                <button class="nav-item" data-view="settings" type="button">
+                    <span class="nav-icon">⚙</span>
+                    <span>Settings</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="system-status">
+                    <span class="status-dot"></span>
+                    <div>
+                        <strong>System Operational</strong>
+                        <span>All services running</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <div class="topbar-left">
+                    <span class="topbar-product">Enterprise AI</span>
+                    <span class="topbar-divider">/</span>
+                    <span>Support Operations</span>
+                </div>
+
+                <div class="topbar-right">
+                    <span class="environment-badge">
+                        <span class="environment-dot"></span>
+                        Production
+                    </span>
+                    <span id="currentDate" class="current-date"></span>
+                </div>
+            </header>
+
+            <div class="page-content">
+                <section id="assistantView" class="assistant-view">
+                    <div class="page-heading">
+                        <div>
+                            <span class="eyebrow">AI Support Operations</span>
+                            <h2>Enterprise Support Copilot</h2>
+                            <p>
+                                Resolve employee questions, search enterprise knowledge,
+                                and automate support workflows.
+                            </p>
+                        </div>
+                    </div>
+
+                    <section class="chat-card">
+                        <div class="chat-card-header">
+                            <div>
+                                <span class="section-eyebrow">AI Assistant</span>
+                                <h3>How can I help?</h3>
+                            </div>
+
+                            <div class="assistant-status">
+                                <span class="status-dot"></span>
+                                Online
+                            </div>
+                        </div>
+
+                        <div id="chatContainer" class="chat-container">
+                            <div class="chat-message assistant-message">
+                                <div class="message-avatar">R</div>
+                                <div class="message-content">
+                                    <div class="message-author">ResolveAI</div>
+                                    <div class="message-bubble">
+                                        Hello! I'm ResolveAI, your enterprise support
+                                        copilot. Ask me about company policies, IT
+                                        support, network access, security, or create a
+                                        support ticket.
+                                    </div>
+                                    <div class="message-source">ResolveAI</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="chat-input-area">
+                            <textarea
+                                id="questionInput"
+                                rows="1"
+                                placeholder="Ask ResolveAI anything..."
+                            ></textarea>
+
+                            <button id="sendButton" type="button">
+                                <span>Ask ResolveAI</span>
+                                <span class="send-icon">↗</span>
+                            </button>
+                        </div>
+                    </section>
+
+                    <section class="quick-actions-section">
+                        <div class="section-heading">
+                            <div>
+                                <span class="eyebrow">Quick Actions</span>
+                                <h3>Common support requests</h3>
+                            </div>
+                        </div>
+
+                        <div class="quick-actions-grid">
+                            <button
+                                class="action-card"
+                                data-action="password"
+                                type="button"
+                            >
+                                <div class="action-icon">↻</div>
+                                <div>
+                                    <strong>Password & Access</strong>
+                                    <span>Reset passwords and access issues</span>
+                                </div>
+                            </button>
+
+                            <button
+                                class="action-card"
+                                data-action="network"
+                                type="button"
+                            >
+                                <div class="action-icon">⌁</div>
+                                <div>
+                                    <strong>Network & VPN</strong>
+                                    <span>Connectivity and VPN assistance</span>
+                                </div>
+                            </button>
+
+                            <button
+                                class="action-card"
+                                data-action="ticket"
+                                type="button"
+                            >
+                                <div class="action-icon">＋</div>
+                                <div>
+                                    <strong>Create Support Ticket</strong>
+                                    <span>Report an issue to IT support</span>
+                                </div>
+                            </button>
+                        </div>
+                    </section>
+
+                    <section class="operations-grid">
+                        <div class="activity-card">
+                            <div class="card-heading">
+                                <div>
+                                    <span class="eyebrow">Operations</span>
+                                    <h3>Recent Activity</h3>
+                                </div>
+
+                                <button
+                                    class="text-button"
+                                    type="button"
+                                    data-view="tickets"
+                                >
+                                    View all
+                                </button>
+                            </div>
+
+                            <div class="activity-list">
+                                <div class="activity-item">
+                                    <div class="activity-indicator"></div>
+                                    <div class="activity-content">
+                                        <strong>Support Copilot ready</strong>
+                                        <span>AI support services are operational</span>
+                                    </div>
+                                    <span class="activity-time">Now</span>
+                                </div>
+
+                                <div class="activity-item">
+                                    <div class="activity-indicator"></div>
+                                    <div class="activity-content">
+                                        <strong>Knowledge base connected</strong>
+                                        <span>Enterprise retrieval system online</span>
+                                    </div>
+                                    <span class="activity-time">Active</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="agent-card">
+                            <div class="card-heading">
+                                <div>
+                                    <span class="eyebrow">Agent Runtime</span>
+                                    <h3>Agent Status</h3>
+                                </div>
+
+                                <span class="live-badge">LIVE</span>
+                            </div>
+
+                            <div class="agent-pipeline">
+                                <div class="pipeline-step">
+                                    <span class="pipeline-number">01</span>
+                                    <div>
+                                        <strong>Intent Routing</strong>
+                                        <span>Classify request</span>
+                                    </div>
+                                    <span class="pipeline-status">Ready</span>
+                                </div>
+
+                                <div class="pipeline-line"></div>
+
+                                <div class="pipeline-step">
+                                    <span class="pipeline-number">02</span>
+                                    <div>
+                                        <strong>Knowledge Retrieval</strong>
+                                        <span>Search enterprise context</span>
+                                    </div>
+                                    <span class="pipeline-status">Ready</span>
+                                </div>
+
+                                <div class="pipeline-line"></div>
+
+                                <div class="pipeline-step">
+                                    <span class="pipeline-number">03</span>
+                                    <div>
+                                        <strong>Evidence Grading</strong>
+                                        <span>Validate retrieved evidence</span>
+                                    </div>
+                                    <span class="pipeline-status">Ready</span>
+                                </div>
+
+                                <div class="pipeline-line"></div>
+
+                                <div class="pipeline-step">
+                                    <span class="pipeline-number">04</span>
+                                    <div>
+                                        <strong>Action & Response</strong>
+                                        <span>Generate grounded response</span>
+                                    </div>
+                                    <span class="pipeline-status">Ready</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+
+                <section id="ticketsView" class="tickets-view hidden">
+                    <div class="page-heading">
+                        <div>
+                            <span class="eyebrow">Support Operations</span>
+                            <h2>Support Tickets</h2>
+                            <p>
+                                Review support requests created through ResolveAI.
+                            </p>
+                        </div>
+
+                        <button
+                            id="refreshTicketsButton"
+                            class="secondary-button"
+                            type="button"
+                        >
+                            Refresh
+                        </button>
+                    </div>
+
+                    <div class="ticket-summary-card">
+                        <div>
+                            <span class="eyebrow">Total Tickets</span>
+                            <strong id="ticketCount">0</strong>
+                        </div>
+                    </div>
+
+                    <div class="tickets-card">
+                        <div class="tickets-header">
+                            <span>Ticket ID</span>
+                            <span>Issue</span>
+                            <span>Category</span>
+                            <span>Priority</span>
+                            <span>Status</span>
+                            <span>Created</span>
+                        </div>
+
+                        <div id="ticketsTableBody" class="tickets-body">
+                            <div class="tickets-empty">
+                                <strong>No support tickets yet</strong>
+                                <span>
+                                    Create a ticket through ResolveAI and it will appear here.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="knowledgeView" class="knowledge-view hidden">
+                    <div class="page-heading">
+                        <div>
+                            <span class="eyebrow">Knowledge Management</span>
+                            <h2>Enterprise Knowledge Base</h2>
+                            <p>
+                                Upload enterprise PDF documents and make them available
+                                to the ResolveAI retrieval system.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="knowledge-upload-card">
+                        <div class="knowledge-upload-icon">↑</div>
+
+                        <div class="knowledge-upload-content">
+                            <span class="section-eyebrow">Document Ingestion</span>
+
+                            <h3>Upload PDF document</h3>
+
+                            <p>
+                                Select a PDF document. ResolveAI will process the file,
+                                create retrieval chunks, generate embeddings, and add
+                                them to the enterprise knowledge base.
+                            </p>
+
+                            <label class="file-upload-label" for="pdfFileInput">
+                                Select PDF
+                            </label>
+
+                            <input
+                                id="pdfFileInput"
+                                type="file"
+                                accept=".pdf,application/pdf"
+                            >
+
+                            <div class="selected-file" id="selectedFileName">
+                                No file selected
+                            </div>
+
+                            <button
+                                id="uploadPdfButton"
+                                class="upload-button"
+                                type="button"
+                            >
+                                Upload PDF
+                            </button>
+
+                            <div
+                                id="uploadStatus"
+                                class="upload-status"
+                                aria-live="polite"
+                            ></div>
+                        </div>
+                    </div>
+
+                    <div class="knowledge-process">
+                        <div class="knowledge-process-card">
+                            <span>01</span>
+                            <strong>Upload</strong>
+                            <p>Select your enterprise PDF.</p>
+                        </div>
+
+                        <div class="knowledge-process-card">
+                            <span>02</span>
+                            <strong>Process</strong>
+                            <p>Extract and split document content.</p>
+                        </div>
+
+                        <div class="knowledge-process-card">
+                            <span>03</span>
+                            <strong>Index</strong>
+                            <p>Embed and store chunks in Pinecone.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

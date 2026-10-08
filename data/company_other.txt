@@ -1,0 +1,9 @@
+Company Other IT Policy
+
+The password reset policy for Company Other is completely different.
+
+Employees must contact the Company Other Identity Team through the internal portal.
+
+The Company Other Service Desk does not use the standard lockout procedure described by other organizations.
+
+Company Other VPN support is handled by the Network Operations Team.
